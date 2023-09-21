@@ -1,10 +1,20 @@
-const {Router} = require('express')
+import { Router } from "express";
+import { deleteReserveHour, deleteResource, getResource, postReserveHour, postResource, putReserveHour, putResource } from "../controllers/resource.controller.js";
+
 const router = Router(); 
 
-const resource = require('../resources.json')
+router.get('/resource', getResource)
 
-router.get('/', (req, res) => {
-    res.json(resource)
-})
+router.post('/resource', postResource)
 
-module.exports = router;
+router.post('/resource/reserveHour', postReserveHour)
+
+router.put('/resource/:id', putResource)
+
+router.put('/resource/reserveHour/:id', putReserveHour)
+
+router.delete('/resource/:id', deleteResource)
+
+router.delete('/resource/reserveHour/:id', deleteReserveHour)
+
+export default router;

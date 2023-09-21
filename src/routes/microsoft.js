@@ -27,5 +27,5 @@ loginRouter.get(
             </script>
         </html>`);
     });
-export { loginRouter };
+export default loginRouter;
 
